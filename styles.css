@@ -5,3 +5,9 @@
 .fw-light {
   font-weight: 300;
 }
+
+.link {
+  text-decoration: none;
+  color: white;
+  font-weight: bolder;
+}
