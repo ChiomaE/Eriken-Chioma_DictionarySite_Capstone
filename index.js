@@ -29,10 +29,6 @@ function getWordDefinition() {
           wordDefMainEl.removeChild(noWordEl);
         }
 
-        console.log(data.word);
-        let wordDefEL = document.createElement("p");
-        wordDefEL.textContent = data[0].word;
-
         data.forEach((word) => {
           console.log("word", word.phonetics);
           wordDefEL = document.createElement("div");
@@ -55,13 +51,14 @@ function getWordDefinition() {
             seperatorDiv.appendChild(partOfSpeechEl);
             seperatorDiv.appendChild(lineEl);
             wordDefEL.appendChild(seperatorDiv);
+
             /* create and append meaning span */
             let meaningEl = document.createElement("span");
             meaningEl.classList.add("fs-6", "text-secondary");
             meaningEl.textContent = "Meaning";
             wordDefEL.appendChild(meaningEl);
 
-            /* definitons */
+            /* create and append definitons */
 
             let defUlList = document.createElement("ul");
             meaning.definitions.forEach((def) => {
@@ -71,6 +68,29 @@ function getWordDefinition() {
             });
             wordDefEL.appendChild(defUlList);
 
+            /* if synonyms exist, create and append synonyms list*/
+
+            if (meaning.synonyms.length > 0) {
+              let synonymsDiv = document.createElement("div");
+              synonymsDiv.classList.add("d-flex", "gap-3");
+
+              let synonymSpanEl = document.createElement("span");
+              synonymSpanEl.classList.add("fs-6", "text-secondary");
+              synonymSpanEl.textContent = "Synonyms:";
+              synonymsDiv.appendChild(synonymSpanEl);
+
+              let synonymsListDiv = document.createElement("div");
+              meaning.synonyms.forEach((synonym) => {
+                let synonymItemEl = document.createElement("span");
+                synonymItemEl.textContent = synonym;
+                synonymsListDiv.appendChild(synonymItemEl);
+              });
+
+              synonymsDiv.appendChild(synonymsListDiv);
+              wordDefEL.appendChild(synonymsDiv);
+            }
+
+            // append definition-div to parent
             fetchedWordEl.appendChild(wordDefEL);
           });
         });
