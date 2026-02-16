@@ -1,9 +1,23 @@
 * {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .link {
   text-decoration: none;
   color: white;
   font-weight: bolder;
+}
+
+.definition-div {
+  font-weight: lighter;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 6px;
+}
+
+.def-seperator {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 4px;
 }

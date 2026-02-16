@@ -26,7 +26,7 @@ function getWordDefinition() {
         }
         console.log(data.word);
         let wordDefEL = document.createElement("p");
-        wordDefEL.innerText = data[0].word;
+        wordDefEL.textContent = data[0].word;
         fetchedWordEl.appendChild(wordDefEL);
         fetchedWordEl.hidden = false;
       }
