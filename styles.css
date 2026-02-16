@@ -9,9 +9,9 @@
 }
 
 .definition-div {
-  font-weight: lighter;
   display: flex;
   flex-direction: column;
+  font-weight: lighter;
   gap: 4px;
   padding-bottom: 6px;
 }
@@ -20,4 +20,9 @@
   display: flex;
   gap: 8px;
   padding-bottom: 4px;
+}
+
+.part-of-speech {
+  font-weight: 600;
+  font-style: italic;
 }
