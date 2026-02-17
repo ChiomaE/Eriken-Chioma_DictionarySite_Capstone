@@ -1,5 +1,29 @@
+* {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
 .link {
   text-decoration: none;
   color: white;
   font-weight: bolder;
+}
+
+.definition-div {
+  display: flex;
+  flex-direction: column;
+  font-weight: lighter;
+  gap: 4px;
+  padding-bottom: 14px;
+}
+
+.def-seperator {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 14px;
+  padding-top: 14px;
+}
+
+.part-of-speech {
+  font-weight: 600;
+  font-style: italic;
 }

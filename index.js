@@ -94,7 +94,7 @@ function getWordDefinition() {
               synonymsListDiv.classList.add("w-75");
               meaning.synonyms.forEach((synonym) => {
                 let synonymItemEl = document.createElement("span");
-                synonymItemEl.textContent = `${synonym}, `;
+                synonymItemEl.textContent = `${synonym} ${meaning.synonyms.length > 1 ? "," : ""} `;
                 synonymsListDiv.appendChild(synonymItemEl);
               });
 
