@@ -8,34 +8,45 @@ let noWordEl;
 let wordDefEL;
 
 function getWordDefinition() {
-  let wordInput = document.getElementById("wordInput");
+  /* clear word divs  */
   if (!wordDefMainEl.hidden) {
     wordDefMainEl.hidden = true;
-    if (!fetchedWordEl.hidden) {
-      fetchedWordEl.hidden = true;
+    if (noWordEl) {
+      console.log("entered", wordDefMainEl.lastChild);
+      wordDefMainEl.removeChild(wordDefMainEl.lastChild);
     }
   }
+  if (!fetchedWordEl.hidden) {
+    fetchedWordEl.hidden = true;
+    defListDiv.removeChild(wordDefEL);
+  }
+
+  /* Fetch api */
+  let wordInput = document.getElementById("wordInput");
   fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${wordInput.value}`)
     .then((response) =>
       response.json().then((data) => ({ ok: response.ok, data })),
     )
     .then(({ ok, data }) => {
       if (!ok) {
+        wordSpanEl.textContent = null;
+        wordPhonEl.textContent = null;
         noWordEl = document.createElement("h4");
         noWordEl.textContent = data.message;
         wordDefMainEl.appendChild(noWordEl);
       } else {
-        if (noWordEl) {
-          wordDefMainEl.removeChild(noWordEl);
-        }
-
         data.forEach((word) => {
           console.log("word", word.phonetics);
           wordDefEL = document.createElement("div");
           wordDefEL.classList.add("definiton-div");
           defListDiv.appendChild(wordDefEL);
           wordSpanEl.textContent = word.word;
-          wordPhonEl.textContent = word.phonetics[2].text;
+          word.phonetics.forEach((phon) => {
+            if (phon.text) {
+              wordPhonEl.textContent = phon.text;
+              return;
+            }
+          });
 
           word.meanings.forEach((meaning) => {
             console.log("meaning", meaning);
@@ -80,18 +91,16 @@ function getWordDefinition() {
               synonymsDiv.appendChild(synonymSpanEl);
 
               let synonymsListDiv = document.createElement("div");
+              synonymsListDiv.classList.add("w-75");
               meaning.synonyms.forEach((synonym) => {
                 let synonymItemEl = document.createElement("span");
-                synonymItemEl.textContent = synonym;
+                synonymItemEl.textContent = `${synonym}, `;
                 synonymsListDiv.appendChild(synonymItemEl);
               });
 
               synonymsDiv.appendChild(synonymsListDiv);
               wordDefEL.appendChild(synonymsDiv);
             }
-
-            // append definition-div to parent
-            fetchedWordEl.appendChild(wordDefEL);
           });
         });
 
