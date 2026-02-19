@@ -57,7 +57,7 @@ function getWordDefinition() {
             console.log(seperatorDiv, partOfSpeechEl);
 
             let lineEl = document.createElement("hr");
-            lineEl.classList.add("w-100");
+            lineEl.classList.add("w-50");
             partOfSpeechEl.textContent = meaning.partOfSpeech;
             seperatorDiv.appendChild(partOfSpeechEl);
             seperatorDiv.appendChild(lineEl);
