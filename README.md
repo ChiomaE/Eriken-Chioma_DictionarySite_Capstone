@@ -4,17 +4,25 @@
 
 The Free Dictionary API (referenced in Tools Used section) was created to provide the internet with a free dictionary resource. This website uses the dictionary api to access word definitions based on user input.
 
-Requirements to run the application:
+### Requirements to run the application:
 
 - A modern web browser (Chrome, Edge, Firefox)
 - Internet connection (required for API requests)
 
-Steps to run the application:
+### Steps to run the application:
 
 1. Clone repository
+
+```
    git clone <your-repo-url>
+```
+
 2. Navigate to the project folder
+
+```
    cd dictionary-app
+```
+
 3. Open file 'index.html' in your browser
 
 # Tools Used
@@ -33,6 +41,8 @@ The application stores the user's input in the string variable wordInput. The va
 https://api.dictionaryapi.dev/api/v2/entries/en/${wordInput.value}
 
 If the word exists, the API will return a word object inside of an array, as shown below:
+
+```
 
 [
 {
@@ -85,8 +95,9 @@ If the word exists, the API will return a word object inside of an array, as sho
 ]
 }
 ]
+```
 
-Note: Word objects can have multiple objects in the meanings array. The application will show every meaning in the array.
+[!NOTE] Word objects can have multiple objects in the meanings array. The application will show every meaning in the array.
 
 If the word does not exist, the error message below will be shown:
 
@@ -94,22 +105,22 @@ Sorry pal, we couldn't find definitions for the word you were looking for.
 
 # Features
 
-Home Page:
+### Home Page:
 
 1. Locate the search bar and submit button at the top of the screen
 2. Type a word into the search bar, then press Submit. Pressing the "Enter" key on the keyboard will not submit the word.
 3. The word and all definitions will appear under the search bar.
    -If the word does not exist, the error message will appear. This error message is sent from the API.
 
-Favorites Page:
+### Favorites Page:
 
 Shows all favorited words with their details. User currently cannot add or delete favorited words.
 
-Word of the Day Page:
+### Word of the Day Page:
 
 Shows a word and all of its definitions. The server sends a new word every 24 hours.
 
-About Page
+### About Page
 
 Shows the following information about this project:
 
