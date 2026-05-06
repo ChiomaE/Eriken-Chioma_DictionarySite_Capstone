@@ -96,8 +96,8 @@ If the word exists, the API will return a word object inside of an array, as sho
 }
 ]
 ```
-
-[!NOTE] Word objects can have multiple objects in the meanings array. The application will show every meaning in the array.
+> [!NOTE]
+> Word objects can have multiple objects in the meanings array. The application will show every meaning in the array.
 
 If the word does not exist, the error message below will be shown:
 
