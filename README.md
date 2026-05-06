@@ -12,9 +12,9 @@ Requirements to run the application:
 Steps to run the application:
 
 1. Clone repository
-   git clone <your-repo-url>
+   'git clone <your-repo-url>'
 2. Navigate to the project folder
-   cd dictionary-app
+   'cd dictionary-app'
 3. Open file 'index.html' in your browser
 
 # Tools Used
