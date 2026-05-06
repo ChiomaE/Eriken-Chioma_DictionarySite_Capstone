@@ -1,8 +1,8 @@
 # Eriken-Chioma_DictionarySite_Capstone
 
-# Overview
+## Overview
 
-The Free Dictionary API (referenced in Tools Used section) was created to provide the internet with a free dictionary resource. This website uses the dictionary api to access word definitions based on user input.
+This application uses the Free Dictionary API to retrieve word definitions, phonetics, and related metadata based on user input.
 
 ### Requirements to run the application:
 
@@ -25,14 +25,18 @@ The Free Dictionary API (referenced in Tools Used section) was created to provid
 
 3. Open file 'index.html' in your browser
 
-# Tools Used
+## Tools Used
 
-Languages - HMTL, CSS, Javascript
-API: Free Dictionary Api - (https://dictionaryapi.dev/)
-Frontend Mentor (design reference) - (https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL)
-Star Icons - https://www.flaticon.com/free-icons/star
+Languages-
+-HTML
+-CSS
+-Javascript
 
-# API Information
+API: [Free Dictionary Api](https://dictionaryapi.dev/)
+Design Reference: [Frontend Mentor](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL)
+Star Icons - [Free Star Icons](https://www.flaticon.com/free-icons/star)
+
+## API Information
 
 URL Syntax: https://api.dictionaryapi.dev/api/v2/entries/en/<word>
 
@@ -42,60 +46,60 @@ https://api.dictionaryapi.dev/api/v2/entries/en/${wordInput.value}
 
 If the word exists, the API will return a word object inside of an array, as shown below:
 
+```json
+[
+  {
+    "word": "hello",
+    "phonetic": "həˈləʊ",
+    "phonetics": [
+      {
+        "text": "həˈləʊ",
+        "audio": "//ssl.gstatic.com/dictionary/static/sounds/20200429/hello--_gb_1.mp3"
+      },
+      {
+        "text": "hɛˈləʊ"
+      }
+    ],
+    "origin": "early 19th century: variant of earlier hollo ; related to holla.",
+    "meanings": [
+      {
+        "partOfSpeech": "exclamation",
+        "definitions": [
+          {
+            "definition": "used as a greeting or to begin a phone conversation.",
+            "example": "hello there, Katie!",
+            "synonyms": [],
+            "antonyms": []
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "an utterance of ‘hello’; a greeting.",
+            "example": "she was getting polite nods and hellos from people",
+            "synonyms": [],
+            "antonyms": []
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "say or shout ‘hello’.",
+            "example": "I pressed the phone button and helloed",
+            "synonyms": [],
+            "antonyms": []
+          }
+        ]
+      }
+    ]
+  }
+]
 ```
 
-[
-{
-"word": "hello",
-"phonetic": "həˈləʊ",
-"phonetics": [
-{
-"text": "həˈləʊ",
-"audio": "//ssl.gstatic.com/dictionary/static/sounds/20200429/hello--_gb_1.mp3"
-},
-{
-"text": "hɛˈləʊ"
-}
-],
-"origin": "early 19th century: variant of earlier hollo ; related to holla.",
-"meanings": [
-{
-"partOfSpeech": "exclamation",
-"definitions": [
-{
-"definition": "used as a greeting or to begin a phone conversation.",
-"example": "hello there, Katie!",
-"synonyms": [],
-"antonyms": []
-}
-]
-},
-{
-"partOfSpeech": "noun",
-"definitions": [
-{
-"definition": "an utterance of ‘hello’; a greeting.",
-"example": "she was getting polite nods and hellos from people",
-"synonyms": [],
-"antonyms": []
-}
-]
-},
-{
-"partOfSpeech": "verb",
-"definitions": [
-{
-"definition": "say or shout ‘hello’.",
-"example": "I pressed the phone button and helloed",
-"synonyms": [],
-"antonyms": []
-}
-]
-}
-]
-}
-]
-```
 > [!NOTE]
 > Word objects can have multiple objects in the meanings array. The application will show every meaning in the array.
 
@@ -103,7 +107,7 @@ If the word does not exist, the error message below will be shown:
 
 Sorry pal, we couldn't find definitions for the word you were looking for.
 
-# Features
+## Features
 
 ### Home Page:
 
@@ -114,7 +118,7 @@ Sorry pal, we couldn't find definitions for the word you were looking for.
 
 ### Favorites Page:
 
-Shows all favorited words with their details. User currently cannot add or delete favorited words.
+Shows all favorited words with their details. **Current Limitiation**: User cannot yet add or delete favorited words.
 
 ### Word of the Day Page:
 
@@ -130,19 +134,19 @@ Shows the following information about this project:
 - What I Learned
 - Future Improvements
 
-# Design and Accessibility Considerations
+## Design and Accessibility Considerations
 
 - Semantic HTML used for better screen reader support
 - Clear typography and spacing for readability
 
-# What I Learned
+## Key Implementation Takeaways
 
-- Work with REST APIs and handle asynchronous data
-- Structure frontend applications without frameworks
-- Translate API responses into user-friendly UI components
-- Debug real-world issues such as failed requests and missing data
+- Integrated a third-party REST API using asynchronous JavaScript
+- Parsed nested JSON response data
+- Rendered dynamic UI content without frontend frameworks
+- Implemented error handling for failed or invalid API requests
 
-# Future Improvements
+## Future Improvements
 
 - Implement a framework (React, Angular) that would allow me to make the page more dynamic.
 
