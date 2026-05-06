@@ -27,10 +27,10 @@ This application uses the Free Dictionary API to retrieve word definitions, phon
 
 ## Tools Used
 
-Languages-
--HTML
--CSS
--Javascript
+Languages:
+- HTML
+- CSS
+- Javascript
 
 API: [Free Dictionary Api](https://dictionaryapi.dev/)
 Design Reference: [Frontend Mentor](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL)
